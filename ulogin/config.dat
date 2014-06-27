@@ -1,0 +1,10 @@
+{
+	"className": "uLogin",
+	"title": "uLogin",
+	"description": "Плагин uLogin позволяет входить на сайт через социальные сети, без ручной регистрации на сайте.",
+	"fields": "nickname,email",
+	"optional": "first_name,last_name,city,bdate,sex,phone",
+	"providers": "vkontakte,google,mailru,yandex,twitter",
+	"hidden": "other",
+	"points":"before_view"
+}

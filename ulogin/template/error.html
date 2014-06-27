@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ошибка</title>
+
+    <link rel="icon" href="{{ www_root }}/sys/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ www_root }}/sys/img/favicon.ico" type="image/x-icon" />
+
+    <style>
+        div#main {
+            border: 16px solid #E0E1E3;
+            padding: 30px 35px;
+            width: 50%;
+            max-width: 550px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #5F607C;
+            font-size: 22px;
+            font-weight: normal;
+            height: 33px;
+            letter-spacing: -0.5px;
+            margin: 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #E0E1E3;
+        }
+    </style>
+<body>
+
+    <div id="main">
+        <h1>Минуточку</h1>
+        {{ message }}<br><br>
+        <form action="" method="post">
+            <input type="text" name="nickname" value="{{ nickname }}">
+            <input type="submit" value="ok">
+        </form>
+    </div>
+
+</body>
+</html>

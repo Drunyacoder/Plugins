@@ -1,0 +1,37 @@
+<style>
+.pl-vote {}
+.pl-vote-title {color: #DB5903; text-align: center; font-size:17px; margin:0px;}
+.pl-vote-ansvers {background:#F1F1F1; border: 1px solid #D3D3D3; color: #444444; font-size: 12px; margin-bottom: 5px; padding: 5px;}
+.pl-vote-ansvers .pl-vote-ansver {}
+.pl-vote-meta {}
+</style>
+<div id="vote_cont">
+	<div class="pl-vote-ansvers"><h3 class="pl-vote-title">{PLTITLE}</h3></div>
+	<div class="pl-vote-ansvers">{PLCONTENT}</div>
+	<img id="ajaxLoader" style="display:none;" src="/sys/img/ajaxs.gif" />
+	<input style="font-size:10px;" onClick="sendVote('{PLTITLE}');" type="button" name="vote" value="Проголосовать" />
+	<input style="font-size:10px;" onClick="showRes('{PLTITLE}');" type="button" name="view" value="Посмотреть" />
+</div>
+<script type="text/javascript">
+point = '';
+function setPoint(val) {
+	point = val;
+}
+function showRes(title) {
+	point = val;
+}
+function sendVote(title) {
+	$('#ajaxLoader').show();
+	$.post('{ACTION}', {ans:point,title:title,type:"sendvote"}, function(data){
+		$('#ajaxLoader').hide();
+		showRes(title);
+	});
+}
+function showRes(title) {
+	$('#ajaxLoader').show();
+	$.post('{ACTION}', {title:title,type:"show"}, function(data){
+		$('#ajaxLoader').hide();
+		$('#vote_cont').html(data);
+	});
+}
+</script>

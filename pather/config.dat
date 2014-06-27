@@ -1,0 +1,7 @@
+{
+	"className":"redirect",
+	"title":"Pather",
+	"description":"301 redirect",
+	"active":1,
+	"points":"before_pather"
+}
